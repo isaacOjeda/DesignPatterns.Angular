@@ -25,7 +25,7 @@ export const LoginActions = {
 
 let applicationPaths: ApplicationPathsType = {
   DefaultLoginRedirectPath: environment.clientBaseUrl,
-  ApiAuthorizationClientConfigurationUrl: `${environment.baseUrl}/_configuration/${ApplicationName}`,
+  ApiAuthorizationClientConfigurationUrl: `${environment.apiUrl}/_configuration/${ApplicationName}`,
   Login: `authentication/${LoginActions.Login}`,
   LoginFailed: `authentication/${LoginActions.LoginFailed}`,
   LoginCallback: `authentication/${LoginActions.LoginCallback}`,

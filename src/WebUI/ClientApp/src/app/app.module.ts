@@ -45,7 +45,7 @@ import { API_BASE_URL } from './DesignPatterns.Api-api';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
-    { provide: API_BASE_URL, useValue: environment.baseUrl }
+    { provide: API_BASE_URL, useValue: environment.apiUrl }
   ],
   bootstrap: [AppComponent]
 })
