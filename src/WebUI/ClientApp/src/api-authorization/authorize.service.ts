@@ -174,14 +174,18 @@ export class AuthorizeService {
       return;
     }
 
-    const response = await fetch(ApplicationPaths.ApiAuthorizationClientConfigurationUrl);
-    if (!response.ok) {
-      throw new Error(`Could not load settings for '${ApplicationName}'`);
-    }
+    const settings: any = {
+      authority: 'http://localhost:5002',
+      client_id: 'designpatterns.angular',
+      redirect_uri: 'https://localhost:5005/authentication/login-callback',
+      front_channel_logout_uri: 'https://localhost:5005/authentication/logout-callback',
+      post_logout_redirect_uri: 'https://localhost:5005/authentication/logged-out',
+      response_type: 'code',
+      scope: 'openid profile designpatterns.api',
+      automaticSilentRenew: true,
+      includeIdTokenInSilentRenew: true
+    };
 
-    const settings: any = await response.json();
-    settings.automaticSilentRenew = true;
-    settings.includeIdTokenInSilentRenew = true;
     this.userManager = new UserManager(settings);
 
     this.userManager.events.addUserSignedOut(async () => {

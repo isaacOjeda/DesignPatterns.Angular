@@ -1,4 +1,4 @@
-import { environment } from "../environments/environment";
+import { environment } from '../environments/environment';
 
 export const ApplicationName = 'DesignPatterns.Angular.WebUI';
 
@@ -25,7 +25,7 @@ export const LoginActions = {
 
 let applicationPaths: ApplicationPathsType = {
   DefaultLoginRedirectPath: environment.clientBaseUrl,
-  ApiAuthorizationClientConfigurationUrl: `${environment.apiUrl}/_configuration/${ApplicationName}`,
+  ApiAuthorizationClientConfigurationUrl: `${environment.authUrl}/_configuration/${ApplicationName}`,
   Login: `authentication/${LoginActions.Login}`,
   LoginFailed: `authentication/${LoginActions.LoginFailed}`,
   LoginCallback: `authentication/${LoginActions.LoginCallback}`,
