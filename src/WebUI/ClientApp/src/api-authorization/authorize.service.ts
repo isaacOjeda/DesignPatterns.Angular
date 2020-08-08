@@ -181,7 +181,7 @@ export class AuthorizeService {
       front_channel_logout_uri: 'https://localhost:5005/authentication/logout-callback',
       post_logout_redirect_uri: 'https://localhost:5005/authentication/logged-out',
       response_type: 'code',
-      scope: 'openid profile designpatterns.api',
+      scope: 'openid profile designpatterns.api roles',
       automaticSilentRenew: true,
       includeIdTokenInSilentRenew: true
     };
