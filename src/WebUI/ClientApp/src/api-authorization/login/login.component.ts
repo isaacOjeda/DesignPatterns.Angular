@@ -37,10 +37,10 @@ export class LoginComponent implements OnInit {
         this.message.next(message);
         break;
       case LoginActions.Profile:
-        this.redirectToProfile();
+        // this.redirectToProfile();
         break;
       case LoginActions.Register:
-        this.redirectToRegister();
+        // this.redirectToRegister();
         break;
       default:
         throw new Error(`Invalid action '${action}'`);
@@ -84,14 +84,14 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  private redirectToRegister(): any {
-    this.redirectToApiAuthorizationPath(
-      `${ApplicationPaths.IdentityRegisterPath}?returnUrl=${encodeURI('/' + ApplicationPaths.Login)}`);
-  }
+  // private redirectToRegister(): any {
+  //   this.redirectToApiAuthorizationPath(
+  //     `${ApplicationPaths.IdentityRegisterPath}?returnUrl=${encodeURI('/' + ApplicationPaths.Login)}`);
+  // }
 
-  private redirectToProfile(): void {
-    this.redirectToApiAuthorizationPath(ApplicationPaths.IdentityManagePath);
-  }
+  // private redirectToProfile(): void {
+  //   this.redirectToApiAuthorizationPath(ApplicationPaths.IdentityManagePath);
+  // }
 
   private async navigateToReturnUrl(returnUrl: string) {
     // It's important that we do a replace here so that we remove the callback uri with the

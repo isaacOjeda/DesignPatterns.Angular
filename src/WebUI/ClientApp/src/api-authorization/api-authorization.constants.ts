@@ -25,7 +25,6 @@ export const LoginActions = {
 
 let applicationPaths: ApplicationPathsType = {
   DefaultLoginRedirectPath: environment.clientBaseUrl,
-  ApiAuthorizationClientConfigurationUrl: `${environment.authUrl}/_configuration/${ApplicationName}`,
   Login: `authentication/${LoginActions.Login}`,
   LoginFailed: `authentication/${LoginActions.LoginFailed}`,
   LoginCallback: `authentication/${LoginActions.LoginCallback}`,
@@ -41,9 +40,7 @@ let applicationPaths: ApplicationPathsType = {
   ProfilePathComponents: [],
   LogOutPathComponents: [],
   LoggedOutPathComponents: [],
-  LogOutCallbackPathComponents: [],
-  IdentityRegisterPath: '/Identity/Account/Register',
-  IdentityManagePath: '/Identity/Account/Manage'
+  LogOutCallbackPathComponents: []
 };
 
 applicationPaths = {
@@ -59,7 +56,6 @@ applicationPaths = {
 
 interface ApplicationPathsType {
   readonly DefaultLoginRedirectPath: string;
-  readonly ApiAuthorizationClientConfigurationUrl: string;
   readonly Login: string;
   readonly LoginFailed: string;
   readonly LoginCallback: string;
@@ -76,8 +72,6 @@ interface ApplicationPathsType {
   readonly LogOutPathComponents: string[];
   readonly LoggedOutPathComponents: string[];
   readonly LogOutCallbackPathComponents: string[];
-  readonly IdentityRegisterPath: string;
-  readonly IdentityManagePath: string;
 }
 
 export const ApplicationPaths: ApplicationPathsType = applicationPaths;
