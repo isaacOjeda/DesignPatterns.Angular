@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User, UserManager, WebStorageStateStore } from 'oidc-client';
 import { BehaviorSubject, concat, from, Observable } from 'rxjs';
 import { filter, map, mergeMap, take, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { ApplicationPaths, ApplicationName } from './api-authorization.constants';
 
 export type IAuthenticationResult =
@@ -175,11 +176,11 @@ export class AuthorizeService {
     }
 
     const settings: any = {
-      authority: 'https://localhost:50001',
+      authority: environment.authUrl,
       client_id: 'designpatterns.angular',
-      redirect_uri: 'http://localhost:50004/authentication/login-callback',
-      front_channel_logout_uri: 'http://localhost:50004/authentication/logout-callback',
-      post_logout_redirect_uri: 'http://localhost:50004/authentication/logged-out',
+      redirect_uri: `${environment.clientBaseUrl}/authentication/login-callback`,
+      front_channel_logout_uri: `${environment.clientBaseUrl}/authentication/logout-callback`,
+      post_logout_redirect_uri: `${environment.clientBaseUrl}/authentication/logged-out`,
       response_type: 'code',
       scope: 'openid profile designpatterns.api roles IdentityServerApi',
       automaticSilentRenew: true,
