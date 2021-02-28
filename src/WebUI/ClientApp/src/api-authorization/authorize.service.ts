@@ -177,9 +177,9 @@ export class AuthorizeService {
     const settings: any = {
       authority: 'https://localhost:50001',
       client_id: 'designpatterns.angular',
-      redirect_uri: 'https://localhost:50005/authentication/login-callback',
-      front_channel_logout_uri: 'https://localhost:50005/authentication/logout-callback',
-      post_logout_redirect_uri: 'https://localhost:50005/authentication/logged-out',
+      redirect_uri: 'http://localhost:50004/authentication/login-callback',
+      front_channel_logout_uri: 'http://localhost:50004/authentication/logout-callback',
+      post_logout_redirect_uri: 'http://localhost:50004/authentication/logged-out',
       response_type: 'code',
       scope: 'openid profile designpatterns.api roles IdentityServerApi',
       automaticSilentRenew: true,
